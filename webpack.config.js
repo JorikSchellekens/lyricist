@@ -10,14 +10,15 @@ const webpack = require('webpack');
 const buildFolder = join(__dirname, 'build');
 
 module.exports = {
-  target: 'node',
-  mode: 'production',
-  entry: {
-    'src': './src/index.js',
-  },
+  target: 'web',
+  mode: 'development',
+  entry: [
+    'babel-polyfill',
+    './js/content.js',
+  ],
   output: {
     path: buildFolder,
-    filename: '[name].js',
+    filename: 'content.js',
   },
   devtool: 'source-map',
   resolve: {
