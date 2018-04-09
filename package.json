@@ -1,0 +1,19 @@
+{
+  "name": "lyricist",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "yarn manifest",
+    "prestart": "yarn manifest",
+    "manifest": "node manifest.js",
+    "build": "webpack",
+    "start": "webpack -w"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^4.5.0"
+  }
+}
