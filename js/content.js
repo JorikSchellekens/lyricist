@@ -31,7 +31,7 @@ a.then(more => {
       .then(result => {
         const DOM = new DOMParser();
         const $ = DOM.parseFromString(result.data, HTML_MIME_TYPE);
-        const lyrics = $.querySelector(AZLYRICS_LYRICS_SELECTOR).innerText;
+        const lyrics = $.querySelector(AZLYRICS_LYRICS_SELECTOR).innerHTML;
         createLyricView(lyrics);
       })
   })
