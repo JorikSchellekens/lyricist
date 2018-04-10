@@ -25,6 +25,10 @@ const manifest = {
   "name": "lyricist",
   "version": version,
   "description": "Youtube lyric injector.",
+  "permissions": [
+    "http://www.azlyrics.com/",
+    "https://www.azlyrics.com/",
+  ],
   "content_scripts": [
     {
       "matches": [
