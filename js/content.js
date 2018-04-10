@@ -17,6 +17,8 @@ import {
 
 import awaitElement from './utils/awaitElement';
 
+import { createLyricView } from './views/lyricsView';
+
 const showMoreButton = async () => 
   await awaitElement(SHOW_MORE_SELECTOR);
 
@@ -29,9 +31,8 @@ a.then(more => {
       .then(result => {
         const DOM = new DOMParser();
         const $ = DOM.parseFromString(result.data, HTML_MIME_TYPE);
-        console.log($);
         const lyrics = $.querySelector(AZLYRICS_LYRICS_SELECTOR).innerText;
-        console.log(lyrics);
+        createLyricView(lyrics);
       })
   })
 });
