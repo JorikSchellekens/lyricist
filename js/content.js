@@ -1,6 +1,7 @@
 import {
   AZLYRICS_LYRICS_SELECTOR,
   SHOW_MORE_SELECTOR,
+  SHOW_LESS_SELECTOR,
   MUSIC_TAG_SELECTOR,
   LYRIC_LOCATION_SELECTOR,
   HTML_MIME_TYPE,
@@ -27,6 +28,7 @@ a.then(more => {
   more.click();
   awaitElement(MUSIC_TAG_SELECTOR)
     .then(tag => {
+      document.querySelector(SHOW_LESS_SELECTOR).click();
       fetchAZLyrics(sandYoutubeTag(tag.innerText))
       .then(result => {
         const DOM = new DOMParser();
