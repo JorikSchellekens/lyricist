@@ -5,4 +5,7 @@ export const LYRICS_VIEW_CSS = {
   'font-size': '1.4rem',
   'overflow': 'auto',
   'height': '360px',
+  'padding-left': '1rem',
+  'padding-right': '1rem',
+  'margin-bottom': '2rem',
 };
