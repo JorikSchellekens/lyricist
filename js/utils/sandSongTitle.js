@@ -7,12 +7,3 @@ export const sandYoutubeTag = tag => {
     title: matches[1],
   }
 }
-
-export const sandAZParams = (metadata) => {
-  const { artist, title } = metadata;
-  const applySand = s => s.toLowerCase().split('').filter(c => 'a' <= c && c <= 'z').join('');
-  return {
-    artist: applySand(artist),
-    title: applySand(title),
-  }
-}

@@ -5,5 +5,5 @@ import {
 } from '../constants';
 
 export const createLyricView = lyrics => {
-  injectDOMElement(LYRIC_LOCATION_SELECTOR, createDiv(lyrics.match(COMMENT_REGEX)[1]));
+  injectDOMElement(LYRIC_LOCATION_SELECTOR, createDiv(lyrics));
 }

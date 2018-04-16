@@ -13,8 +13,8 @@ import {
 } from './utils/sandSongTitle';
 
 import {
-  fetchAZLyrics,
-} from './utils/fetchLyrics';
+  fetchLyrics,
+} from './utils/providers/AZLyrics';
 
 import awaitElement from './utils/awaitElement';
 
@@ -28,13 +28,11 @@ a.then(more => {
   more.click();
   awaitElement(MUSIC_TAG_SELECTOR)
     .then(tag => {
+      const metadata = sandYoutubeTag(tag.innerText);
       document.querySelector(SHOW_LESS_SELECTOR).click();
-      fetchAZLyrics(sandYoutubeTag(tag.innerText))
-      .then(result => {
-        const DOM = new DOMParser();
-        const $ = DOM.parseFromString(result.data, HTML_MIME_TYPE);
-        const lyrics = $.querySelector(AZLYRICS_LYRICS_SELECTOR).innerHTML;
-        createLyricView(lyrics);
-      })
+      fetchLyrics(metadata)
+        .then(lyrics => {
+          createLyricView(lyrics);
+        });
   })
 });
