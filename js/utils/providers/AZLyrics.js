@@ -15,6 +15,11 @@ const LYRIC_SELECTOR = 'div.col-xs-12.col-lg-8.text-center > div:nth-of-type(5)'
 const URL = metadata => `https://www.azlyrics.com/lyrics/${metadata.artist}/${metadata.title}.html`;
 
 /**
+ * @param {string}
+ */
+const removeThe = s => s.indexOf('the') === 0 ? s.substring(3) : s;
+
+/**
  * @typedef {Object} metadata
  * @property {string} title The title of the song
  * @property {string} artist The artist of the song
@@ -23,7 +28,7 @@ const sandParams = metadata => {
   const { artist, title } = metadata;
   const applySand = s => s.toLowerCase().split('').filter(c => 'a' <= c && c <= 'z').join('');
   return {
-    artist: applySand(artist),
+    artist: removeThe(applySand(artist)),
     title: applySand(title),
   }
 }
