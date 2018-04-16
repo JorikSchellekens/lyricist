@@ -15,9 +15,9 @@ const LYRIC_SELECTOR = 'div.col-xs-12.col-lg-8.text-center > div:nth-of-type(5)'
 const URL = metadata => `https://www.azlyrics.com/lyrics/${metadata.artist}/${metadata.title}.html`;
 
 /**
- *
- * @param {metadata} metadata
- * @returns {metadata} Metadata sanded for AZlyrics
+ * @typedef {Object} metadata
+ * @property {string} title The title of the song
+ * @property {string} artist The artist of the song
  */
 const sandParams = metadata => {
   const { artist, title } = metadata;
