@@ -4,10 +4,21 @@ import {
   parseDOM,
 } from '../DOMUtils';
 
+/**
+ * @typedef {Object} metadata
+ * @property {string} title The title of the song
+ * @property {string} artist The artist of the song
+ */
+
 const COMMENT_REGEX = /<!--.*?-->((.|\n)*)/
 const LYRIC_SELECTOR = 'div.col-xs-12.col-lg-8.text-center > div:nth-of-type(5)';
 const URL = metadata => `https://www.azlyrics.com/lyrics/${metadata.artist}/${metadata.title}.html`;
 
+/**
+ *
+ * @param {metadata} metadata
+ * @returns {metadata} Metadata sanded for AZlyrics
+ */
 const sandParams = metadata => {
   const { artist, title } = metadata;
   const applySand = s => s.toLowerCase().split('').filter(c => 'a' <= c && c <= 'z').join('');
@@ -18,8 +29,9 @@ const sandParams = metadata => {
 }
 
 /**
- * @param {string} metadata.artist
- * @param {string} metadata.title
+ *
+ * @param {metadata} metadata
+ * @returns {string} Lyrics for the song
  */
 export const fetchLyrics = metadata => {
   const options = {
