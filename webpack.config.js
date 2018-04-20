@@ -12,13 +12,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   target: 'web',
   mode: 'development',
-  entry: [
-    'babel-polyfill',
-    './js/content.js',
-  ],
+  entry: {
+    content: [
+      'babel-polyfill',
+      './js/content.js',
+    ],
+    eventPage: './js/eventPage.js',
+  },
   output: {
     path: buildFolder,
-    filename: 'content.js',
+    filename: '[name].js',
   },
   plugins: [
     new CopyWebpackPlugin([

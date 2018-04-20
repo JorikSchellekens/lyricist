@@ -8,9 +8,20 @@ import {
 
 import { createLyricView } from './views/lyricsView';
 
-getMetadata().then(metadata => {
-  fetchLyrics(metadata)
-    .then(lyrics => {
-      createLyricView(lyrics);
-    })
-  });
+const yeah = (request, sender, response) => {
+  console.log("message!");
+};
+// Listen for tab changes from eventPage
+
+const getLyrics = () => {
+  getMetadata().then(metadata => {
+    fetchLyrics(metadata)
+      .then(lyrics => {
+        createLyricView(lyrics);
+      })
+    });
+};
+
+chrome.runtime.onMessage.addListener(getLyrics);
+
+getLyrics();
