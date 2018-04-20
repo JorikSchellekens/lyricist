@@ -8,11 +8,6 @@ import {
 
 import { createLyricView } from './views/lyricsView';
 
-const yeah = (request, sender, response) => {
-  console.log("message!");
-};
-// Listen for tab changes from eventPage
-
 const getLyrics = () => {
   getMetadata().then(metadata => {
     fetchLyrics(metadata)
@@ -22,6 +17,7 @@ const getLyrics = () => {
     });
 };
 
+// Listen for tab changes from eventPage
 chrome.runtime.onMessage.addListener(getLyrics);
 
 getLyrics();
