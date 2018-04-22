@@ -24,6 +24,7 @@ const manifest = {
   "manifest_version": 2,
   "name": "lyricist",
   "version": version,
+  "author": ["Jorik Schellkens", "Swapnil Raj"],
   "description": "Youtube lyric injector.",
   "icons": {
 	  "16":  "icons/16.png",
