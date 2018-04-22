@@ -1,11 +1,9 @@
-const callback = details => 
-  chrome.tabs.sendMessage(details.tabId, {}, () => {});
-
-chrome.webNavigation.onHistoryStateUpdated.addListener(
-  callback,
-  {
-    url: [
-      {hostSuffix: 'youtube.com'},
-    ]
+const callback = (tabid, pageinfo, tab) =>  {
+  if(pageinfo.url) {
+    chrome.tabs.sendMessage(tabid, {}, () => {});
   }
+}
+
+chrome.tabs.onUpdated.addListener(
+  callback,
 );
