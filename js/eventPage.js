@@ -1,6 +1,8 @@
 const callback = (tabid, pageinfo, tab) =>  {
   if(pageinfo.url) {
-    chrome.tabs.sendMessage(tabid, {}, () => {});
+    setTimeout( () => {
+      chrome.tabs.sendMessage(tabid, {}, () => {});
+    }, 0);
   }
 }
 
