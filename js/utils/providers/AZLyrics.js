@@ -22,7 +22,8 @@ const URL = metadata => `https://www.azlyrics.com/lyrics/${metadata.artist}/${me
 const sandParams = metadata => {
   const { artist, title } = metadata;
   const removeThe = s => s.indexOf('the') === 0 ? s.substring(3) : s;
-  const applySand = s => s.toLowerCase().split('').filter((c => 'a' && c <= 'z') || (c => '1' && c <= '9') ).join('');
+  const applySand = s => s.toLowerCase().split('')
+    .filter(s => (s >= 'a' && s <= 'z') || (s >= '0' && s <= '9')).join('');
   return {
     artist: removeThe(applySand(artist)),
     title: applySand(title),
