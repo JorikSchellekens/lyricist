@@ -26,7 +26,7 @@ const removeThe = s => s.indexOf('the') === 0 ? s.substring(3) : s;
  */
 const sandParams = metadata => {
   const { artist, title } = metadata;
-  const applySand = s => s.toLowerCase().split('').filter(c => 'a' <= c && c <= 'z').join('');
+  const applySand = s => s.toLowerCase().split('').filter(c => 'a' && c <= 'z').join('');
   return {
     artist: removeThe(applySand(artist)),
     title: applySand(title),
