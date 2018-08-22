@@ -1,6 +1,6 @@
 import {
   getMetadata,
-} from './utils/parsers/tag';
+} from './utils/parsers/title';
 
 import {
   fetchLyrics,
