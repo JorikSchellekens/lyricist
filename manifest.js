@@ -22,7 +22,8 @@ const buildExists = existsSync(buildFolder);
 
 const manifest = {
   "manifest_version": 2,
-  "name": "lyricist",
+  "name": "lyricist - Lyrics for Youtube",
+  "short_name": "lyricist",
   "version": version,
   "author": "Jorik Schellekens & Swapnil Raj",
   "description": "Youtube lyric injector.",
