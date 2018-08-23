@@ -5,7 +5,7 @@ export const LYRICS_VIEW_CSS = {
   'font-family': 'var(--ytd-video-primary-info-renderer-title-font-family, inherit)',
   'font-size': '1.4rem',
   'overflow': 'auto',
-  'height': '360px',
+  'height': '500px',
   'padding-left': '1rem',
   'padding-right': '1rem',
   'margin-bottom': '2rem',
