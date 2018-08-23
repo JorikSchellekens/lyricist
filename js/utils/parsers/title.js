@@ -2,10 +2,11 @@ import awaitElement from '../awaitElement';
 
 const TITLE_SELECTOR = '#container > h1';
 
-const TITLE_SPLIT_REGEX = /(.*)(-|:)(.*)/
+const TITLE_SPLIT_REGEX = /(.*)(\||\/\/\/|-|:)(.*)/
 const BRACKET_REGEX = /\(.*\)/
 const FEAT_REGEX = /(\sfeat|\sft.).*/i
 const OFFICIAL_REGEX = /(\sofficial video).*/i
+
 const getTitle = async () =>
   await awaitElement(TITLE_SELECTOR);
 
