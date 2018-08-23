@@ -8,7 +8,7 @@ import {
 
 import { TAB_CHANGED } from './constants';
 
-import { createLyricView } from './views/lyricsView';
+import { createLyricView, clearLyricView } from './views/lyricsView';
 
 const getLyrics = () => {
   getMetadata().then(metadata => {
@@ -22,6 +22,7 @@ const getLyrics = () => {
 const messageHandler = message => {
   switch(message.type) {
     case TAB_CHANGED:
+      clearLyricView();
       getLyrics();
     default:
       return;

@@ -10,5 +10,6 @@ export const LYRICS_VIEW_CSS = {
   'padding-right': '1rem',
   'margin-bottom': '2rem',
 };
+export const LYRICS_VIEW_ID = 'lyrics';
 
 export const TAB_CHANGED = 'TAB_CHANGED';

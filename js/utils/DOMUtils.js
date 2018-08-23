@@ -11,6 +11,10 @@ export const injectDOMElement = (selector, element) => {
   root.insertBefore(element, root.firstChild);
 }
 
+export const removeDOMElement = (element) => {
+  if(element) element.parentNode.removeChild(element);
+}
+
 export const parseDOM = result => {
   const DOM = new DOMParser();
   return DOM.parseFromString(result.data, HTML_MIME_TYPE);
