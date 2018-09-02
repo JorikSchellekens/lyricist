@@ -7,7 +7,6 @@ import {
 } from './utils/providers/AZLyrics';
 
 import {
-  DEFAULT_LYRIC_VIEW_HEIGHT,
   TAB_CHANGED,
   VIDEO_ELEMENT_SELECTOR,
 } from './constants';
@@ -19,8 +18,7 @@ const getLyrics = () => {
     fetchLyrics(metadata)
       .then(lyrics => {
         const playerHeight =
-          document.querySelector(VIDEO_ELEMENT_SELECTOR).style.height ||
-          DEFAULT_LYRIC_VIEW_HEIGHT;
+          document.querySelector(VIDEO_ELEMENT_SELECTOR).style.height;
         createLyricView(lyrics, playerHeight);
       })
     });
