@@ -12,9 +12,10 @@ import {
   LYRICS_VIEW_ID,
 } from '../constants';
 
-export const createLyricView = lyrics => {
+export const createLyricView = (lyrics, playerHeight) => {
   const lyricsDiv = createDiv(lyrics);
   addCSS(LYRICS_VIEW_CSS, lyricsDiv);
+  addCSS({ height: playerHeight }, lyricsDiv);
   addClass(LYRICS_VIEW_CLASS_LIST, lyricsDiv);
   addId(LYRICS_VIEW_ID, lyricsDiv);
   injectDOMElement(LYRIC_LOCATION_SELECTOR, lyricsDiv);

@@ -6,7 +6,11 @@ import {
   fetchLyrics,
 } from './utils/providers/AZLyrics';
 
-import { TAB_CHANGED } from './constants';
+import {
+  DEFAULT_LYRIC_VIEW_HEIGHT,
+  TAB_CHANGED,
+  VIDEO_ELEMENT_SELECTOR,
+} from './constants';
 
 import { createLyricView, clearLyricView } from './views/lyricsView';
 
@@ -14,7 +18,10 @@ const getLyrics = () => {
   getMetadata().then(metadata => {
     fetchLyrics(metadata)
       .then(lyrics => {
-        createLyricView(lyrics);
+        const playerHeight =
+          document.querySelector(VIDEO_ELEMENT_SELECTOR).style.height ||
+          DEFAULT_LYRIC_VIEW_HEIGHT;
+        createLyricView(lyrics, playerHeight);
       })
     });
 };
