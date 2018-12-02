@@ -1,8 +1,7 @@
 export const LYRIC_LOCATION_SELECTOR = '#related';
 export const LYRICS_VIEW_CLASS_LIST = ['lyrics'];
 
-const DEFAULT_LYRIC_VIEW_HEIGHT = '500px';
-export const LYRICS_VIEW_CSS = height => ({
+export const LYRICS_VIEW_CSS = (height = '500px') => ({
   'color': 'var(--ytd-video-primary-info-renderer-title-color, var(--yt-primary-text-color))',
   'font-family': 'var(--ytd-video-primary-info-renderer-title-font-family, inherit)',
   'font-size': '1.4rem',
@@ -10,7 +9,7 @@ export const LYRICS_VIEW_CSS = height => ({
   'padding-left': '1rem',
   'padding-right': '1rem',
   'margin-bottom': '2rem',
-  'height': height || DEFAULT_LYRIC_VIEW_HEIGHT,
+  'height': height,
 });
 export const LYRICS_VIEW_ID = 'lyrics';
 
