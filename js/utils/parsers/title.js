@@ -1,14 +1,9 @@
-import awaitElement from '../awaitElement';
-
-const TITLE_SELECTOR = '#container > h1';
-
-const TITLE_SPLIT_REGEX = /(.*)(\||\/\/\/|-|:)(.*)/
+const TITLE_SPLIT_REGEX = /(.*)(\||\/\/\/|-|:)(.*)(\s-\sYouTube)$/
 const BRACKET_REGEX = /(\(|\[|\{).*(\}|\]|\))/
 const FEAT_REGEX = /(\sfeat|\sft.).*/i
 const OFFICIAL_REGEX = /(\sofficial video).*/i
 
-const getTitle = async () =>
-  await awaitElement(TITLE_SELECTOR);
+const getTitle = async () => document.title;
 
 /**
  *
@@ -34,6 +29,6 @@ const sandTitle = title => {
  * @returns {metadata} Metadata for the lyrics provider
  */
 export const getMetadata = () => {
-  return getTitle().then(title => sandTitle(title.innerText));
+  return getTitle().then(sandTitle);
 }
 
