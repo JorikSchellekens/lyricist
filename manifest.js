@@ -39,12 +39,7 @@ const manifest = {
   "permissions": [
     "http://www.azlyrics.com/",
     "https://www.azlyrics.com/",
-    "tabs",
   ],
-  "background": {
-    "scripts": ["eventPage.js"],
-    "persistent": false,
-  },
   "content_scripts": [
     {
       "matches": [
