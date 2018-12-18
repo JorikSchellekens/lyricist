@@ -3,7 +3,7 @@ const BRACKET_REGEX = /(\(|\[|\{).*(\}|\]|\))/
 const FEAT_REGEX = /(\sfeat|\sft.).*/i
 const OFFICIAL_REGEX = /(\sofficial video).*/i
 
-const getTitle = async () => document.title;
+const getTitle = () => document.title;
 
 /**
  *
@@ -29,6 +29,6 @@ const sandTitle = title => {
  * @returns {metadata} Metadata for the lyrics provider
  */
 export const getMetadata = () => {
-  return getTitle().then(sandTitle);
+  return sandTitle(getTitle());
 }
 
