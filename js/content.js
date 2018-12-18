@@ -20,14 +20,12 @@ import {
 import { createLyricView, clearLyricView } from './views/lyricsView';
 
 const getLyrics = () => {
-  getMetadata().then(metadata => {
-    fetchLyrics(metadata)
-      .then(lyrics => {
-        const playerHeight =
-          document.querySelector(VIDEO_ELEMENT_SELECTOR).style.height;
-        createLyricView(lyrics, playerHeight);
-      })
-    });
+  fetchLyrics(getMetadata())
+    .then(lyrics => {
+      const playerHeight =
+        document.querySelector(VIDEO_ELEMENT_SELECTOR).style.height;
+      createLyricView(lyrics, playerHeight);
+    })
 };
 
 
