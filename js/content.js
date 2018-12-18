@@ -9,7 +9,13 @@ import {
 import {
   TAB_CHANGED,
   VIDEO_ELEMENT_SELECTOR,
+  TITLE_SELECTOR,
+  MUTATION_OBSERVER_CONFIG,
 } from './constants';
+
+import {
+  handler
+} from './utils/mutation_handlers/cached_handler';
 
 import { createLyricView, clearLyricView } from './views/lyricsView';
 
@@ -24,17 +30,10 @@ const getLyrics = () => {
     });
 };
 
-const messageHandler = message => {
-  switch(message.type) {
-    case TAB_CHANGED:
-      clearLyricView();
-      getLyrics();
-    default:
-      return;
-  }
-}
 
-// Listen for tab changes from eventPage
-chrome.runtime.onMessage.addListener(messageHandler);
+const observer = new MutationObserver(handler(() => {
+  clearLyricView();
+  getLyrics();
+}));
 
-getLyrics();
+observer.observe(document.querySelector(TITLE_SELECTOR), MUTATION_OBSERVER_CONFIG);

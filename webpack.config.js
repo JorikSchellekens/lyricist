@@ -17,7 +17,6 @@ module.exports = {
       'babel-polyfill',
       './js/content.js',
     ],
-    eventPage: './js/eventPage.js',
   },
   output: {
     path: buildFolder,
