@@ -5,7 +5,7 @@ const SHOW_LESS_SELECTOR = 'paper-button.ytd-expander:nth-child(3)';
 const TAG_SELECTOR = '#collapsible ytd-metadata-row-renderer:last-child #content';
 const YOUTUBE_TAG_REGEX = /"([^()]*)(.*)?" by (.*) \(.*•?.*\)/;
 
-const showMoreButton = async () => awaitElement(SHOW_MORE_SELECTOR);
+const showMoreButton = () => awaitElement(SHOW_MORE_SELECTOR);
 
 /**
  *
