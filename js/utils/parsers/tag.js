@@ -5,8 +5,7 @@ const SHOW_LESS_SELECTOR = 'paper-button.ytd-expander:nth-child(3)';
 const TAG_SELECTOR = '#collapsible ytd-metadata-row-renderer:last-child #content';
 const YOUTUBE_TAG_REGEX = /"([^()]*)(.*)?" by (.*) \(.*•?.*\)/;
 
-const showMoreButton = async () => 
-  await awaitElement(SHOW_MORE_SELECTOR);
+const showMoreButton = async () => awaitElement(SHOW_MORE_SELECTOR);
 
 /**
  *
@@ -18,8 +17,8 @@ const sandTag = tag => {
   return {
     artist: matches[3],
     title: matches[1],
-  }
-}
+  };
+};
 
 /**
  * @returns {metadata} Metadata for the lyrics provider
@@ -32,6 +31,6 @@ export const getMetadata = () => {
         const metadata = sandTag(tag.innerText);
         document.querySelector(SHOW_LESS_SELECTOR).click();
         return metadata;
-    })
+    });
   });
-}
+};

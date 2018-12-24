@@ -5,8 +5,8 @@ let lastEvent = {
 
 const MUTATION_STABILITY_TIMEOUT = 10; // milliseconds
 
-let isNotCached = timeStamp => title => {
-  if(title !== lastEvent.title ||
+const isNotCached = timeStamp => title => {
+  if (title !== lastEvent.title ||
      timeStamp - lastEvent.timeStamp < MUTATION_STABILITY_TIMEOUT) {
     lastEvent = {
       title,
@@ -15,7 +15,7 @@ let isNotCached = timeStamp => title => {
     return true;
   }
   return false;
-}
+};
 
 /**
  * Calls the callback if an event in the mutation list has a different to title
@@ -23,5 +23,3 @@ let isNotCached = timeStamp => title => {
  */
 export const handler = callback => mutationList =>
   (mutationList.some(x => isNotCached(Date.now())(x.target.innerHTML))) ? callback() : undefined;
-  
-
