@@ -1,4 +1,4 @@
-const TITLE_SPLIT_REGEX = /(.*)(\||\/\/\/|-|:)(.*)(\s-\sYouTube)$/
+const TITLE_SPLIT_REGEX = /(.*)(\||\/\/\/|\s-\s|:)(.*)(\s-\sYouTube)$/
 const BRACKET_REGEX = /(\(|\[|\{).*(\}|\]|\))/
 const FEAT_REGEX = /(\sfeat|\sft.).*/i
 const OFFICIAL_REGEX = /(\sofficial video).*/i
