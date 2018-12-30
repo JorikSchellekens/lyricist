@@ -1,4 +1,4 @@
-export const LYRIC_LOCATION_SELECTOR = '#related';
+export const LYRIC_LOCATION_SELECTOR = '#secondary-inner';
 export const LYRICS_VIEW_CLASS_LIST = ['lyrics'];
 
 export const LYRICS_VIEW_CSS = (height = '500px') => ({
