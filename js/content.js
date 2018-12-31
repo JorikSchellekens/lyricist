@@ -7,10 +7,9 @@ import {
 } from './utils/providers/AZLyrics';
 
 import {
-  TAB_CHANGED,
-  VIDEO_ELEMENT_SELECTOR,
-  TITLE_SELECTOR,
   MUTATION_OBSERVER_CONFIG,
+  TITLE_SELECTOR,
+  VIDEO_ELEMENT_SELECTOR,
 } from './constants';
 
 import {

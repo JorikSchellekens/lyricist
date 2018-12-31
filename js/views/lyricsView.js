@@ -3,8 +3,8 @@ import {
   injectDOMElement,
   removeDOMElement,
 } from '../utils/DOMUtils';
+
 import {
-  COMMENT_REGEX,
   LYRIC_LOCATION_SELECTOR,
   LYRICS_VIEW_CLASS_LIST,
   LYRICS_VIEW_CSS,
@@ -32,5 +32,8 @@ const addId = (id, element) => {
 };
 
 const addCSS = (styles, element) => {
-  Object.entries(styles).forEach(pair => element.style[pair[0]] = [pair[1]]);
+  Object.entries(styles)
+    .forEach(([attribute, attributeValue]) =>
+      element.style[attribute] = [attributeValue]
+    );
 };

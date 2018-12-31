@@ -28,9 +28,9 @@ export const getMetadata = () => {
   return a.then(more => {
     more.click();
     return awaitElement(TAG_SELECTOR).then(tag => {
-        const metadata = sandTag(tag.innerText);
-        document.querySelector(SHOW_LESS_SELECTOR).click();
-        return metadata;
+      const metadata = sandTag(tag.innerText);
+      document.querySelector(SHOW_LESS_SELECTOR).click();
+      return metadata;
     });
   });
 };
