@@ -8,7 +8,8 @@
     "prestart": "yarn manifest",
     "manifest": "node manifest.js",
     "build": "webpack",
-    "start": "webpack -w"
+    "start": "webpack -w",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
