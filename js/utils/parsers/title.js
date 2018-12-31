@@ -13,9 +13,9 @@ const sandTitle = title => {
   const matches = title
     .match(TITLE_SPLIT_REGEX)
     .map(s => s.trim()
-      .replace(BRACKET_REGEX, "")
-      .replace(FEAT_REGEX, "")
-      .replace(OFFICIAL_REGEX, "")
+      .replace(BRACKET_REGEX, '')
+      .replace(FEAT_REGEX, '')
+      .replace(OFFICIAL_REGEX, '')
     );
   return {
     artist: matches[1],
