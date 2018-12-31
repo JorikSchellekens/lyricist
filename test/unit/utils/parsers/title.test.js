@@ -1,4 +1,4 @@
-import { getMetadata } from '../../../js/utils/parsers/title';
+import { getMetadata } from '../../../../js/utils/parsers/title';
 
 /**
  * Utility function to make metadata object for a song.
