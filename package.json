@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "webpack",
+    "lint": "yarn eslint -c eslintrc.json js test",
+    "manifest": "node manifest.js",
     "prebuild": "yarn manifest",
     "prestart": "yarn manifest",
-    "manifest": "node manifest.js",
-    "build": "webpack",
     "start": "webpack -w",
     "test": "jest"
   },
@@ -19,6 +20,7 @@
     "babel-preset-env": "^1.6.1",
     "copy-webpack-plugin": "^4.5.1",
     "jest": "^23.6.0",
+    "eslint": "^5.11.1",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   },
