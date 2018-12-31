@@ -16,5 +16,3 @@ export const LYRICS_VIEW_ID = 'lyrics';
 export const VIDEO_ELEMENT_SELECTOR = 'video';
 
 export const MUTATION_OBSERVER_CONFIG = { childList: true };
-
-export const TITLE_SELECTOR = 'title';
