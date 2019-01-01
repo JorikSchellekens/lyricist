@@ -19,19 +19,13 @@ import {
 
 import { createLyricView, clearLyricView } from './views/lyricsView';
 
-const getLyrics = () => {
-  fetchLyrics(getMetadata())
-    .then(lyrics => {
-      const playerHeight =
-        document.querySelector(VIDEO_ELEMENT_SELECTOR).style.height;
-      createLyricView(lyrics, playerHeight);
-    })
-};
-
-
 const observer = new MutationObserver(handler(() => {
   clearLyricView();
-  getLyrics();
+  fetchLyrics(getMetadata())
+    .then(lyrics => {
+      createLyricView(lyrics,
+        document.querySelector(VIDEO_ELEMENT_SELECTOR).style.height);
+    });
 }));
 
 observer.observe(document.querySelector(TITLE_SELECTOR), MUTATION_OBSERVER_CONFIG);
