@@ -8,7 +8,8 @@
     "prestart": "yarn manifest",
     "manifest": "node manifest.js",
     "build": "webpack",
-    "start": "webpack -w"
+    "start": "webpack -w",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -17,6 +18,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "copy-webpack-plugin": "^4.5.1",
+    "jest": "^23.6.0",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   },
