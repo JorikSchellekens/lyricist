@@ -24,13 +24,13 @@ test('Song titles with the - separator', () => {
       metaDataObject('Lekman, Jens', 'Friday Night at the Drive-in Bingo'),
     ],
   ]
-  // Add the ` - YouTube` suffix which is added by YouTube to the document
-  // title.
-  .map(([ fullname, songObject ]) => [ `${fullname} - YouTube`, songObject ])
-  .forEach(([ fullname, songObject ]) => {
-    document.title = fullname;
-    expect(getMetadata()).toEqual(songObject);
-  });
+    // Add the ` - YouTube` suffix which is added by YouTube to the document
+    // title.
+    .map(([ fullname, songObject ]) => [ `${fullname} - YouTube`, songObject ])
+    .forEach(([ fullname, songObject ]) => {
+      document.title = fullname;
+      expect(getMetadata()).toEqual(songObject);
+    });
 });
 
 /**
@@ -38,7 +38,7 @@ test('Song titles with the - separator', () => {
  * title other than `-`.
  */
 test('Song titles with separators other than -', () => {
-[
+  [
     [
       'Kasabian:Rewired',
       metaDataObject('Kasabian', 'Rewired'),
@@ -64,11 +64,11 @@ test('Song titles with separators other than -', () => {
       metaDataObject('Lekman, Jens', 'Friday Night at the Drive-in Bingo'),
     ],
   ]
-  // Add the ` - YouTube` suffix which is added by YouTube to the document
-  // title.
-  .map(([ fullname, songObject ]) => [ `${fullname} - YouTube`, songObject ])
-  .forEach(([ fullname, songObject ]) => {
-    document.title = fullname;
-    expect(getMetadata()).toEqual(songObject);
-  });
+    // Add the ` - YouTube` suffix which is added by YouTube to the document
+    // title.
+    .map(([ fullname, songObject ]) => [ `${fullname} - YouTube`, songObject ])
+    .forEach(([ fullname, songObject ]) => {
+      document.title = fullname;
+      expect(getMetadata()).toEqual(songObject);
+    });
 });
