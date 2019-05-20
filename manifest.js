@@ -37,8 +37,8 @@ const manifest = {
 		"256": "icons/256.png"
 	},
   "permissions": [
-    "http://www.azlyrics.com/",
-    "https://www.azlyrics.com/",
+    "http://www.repl.co/",
+    "https://www.repl.co/",
   ],
   "content_scripts": [
     {
