@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { parseDOM } from '../DOMUtils';
 
 /**
  * @typedef {Object} metadata
@@ -8,8 +7,8 @@ import { parseDOM } from '../DOMUtils';
  */
 
 const COMMENT_REGEX = /<!--.*?-->((.|\n)*)/;
-const LYRIC_SELECTOR = 'div.col-xs-12.col-lg-8.text-center > div:nth-of-type(5)';
-const URL = metadata => `https://www.azlyrics.com/lyrics/${metadata.artist}/${metadata.title}.html`;
+const URL = metadata => `https://CelebratedRadiantCareware--lordraj.repl.co/lyrics?title=${metadata.title}&artist=${metadata.artist}`;
+
 
 /**
  * @typedef {Object} metadata
@@ -36,9 +35,4 @@ export const fetchLyrics = metadata =>
   axios({
     method: 'GET',
     url: URL(sandParams(metadata)),
-  })
-    .then(result =>
-      parseDOM(result)
-        .querySelector(LYRIC_SELECTOR)
-        .innerHTML
-        .match(COMMENT_REGEX)[1]);
+  }).then(result => result.data.match(COMMENT_REGEX)[1]);
